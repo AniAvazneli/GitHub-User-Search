@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/GitHub-User-Search/static/css/main.d39693a8.css",
+    "main.js": "/GitHub-User-Search/static/js/main.ebf09a2f.js",
+    "static/media/icon-sun.svg": "/GitHub-User-Search/static/media/icon-sun.f28a8996f9959c40bdff14d5a43c08d8.svg",
+    "static/media/icon-website.svg": "/GitHub-User-Search/static/media/icon-website.b7923f6c1dae9717c079c60d8a5c82e5.svg",
+    "static/media/icon-company.svg": "/GitHub-User-Search/static/media/icon-company.6f78ffb334b191c8ed54d0c2a6f7cc25.svg",
+    "index.html": "/GitHub-User-Search/index.html",
+    "static/media/icon-twitter.svg": "/GitHub-User-Search/static/media/icon-twitter.f6a2a695fbb260b28a9fd67dd4179ea5.svg",
+    "static/media/icon-moon.svg": "/GitHub-User-Search/static/media/icon-moon.cce754cec46d095fd3ce12737f38694b.svg",
+    "static/media/icon-location.svg": "/GitHub-User-Search/static/media/icon-location.f11c5487a9922cbad40a27e8cc1cfaee.svg",
+    "main.d39693a8.css.map": "/GitHub-User-Search/static/css/main.d39693a8.css.map",
+    "main.ebf09a2f.js.map": "/GitHub-User-Search/static/js/main.ebf09a2f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d39693a8.css",
+    "static/js/main.ebf09a2f.js"
+  ]
+}
