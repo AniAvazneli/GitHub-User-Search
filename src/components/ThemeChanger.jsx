@@ -23,11 +23,10 @@ export default ThemeChanger;
 const ThemeMain = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-family: "Space Mono";
   font-style: normal;
-  width: 730px;
   margin: auto;
 `;
 
@@ -36,7 +35,6 @@ const Definer = styled.h3`
   font-size: 26px;
   line-height: 39px;
   color: ${({ isWhite }) => (isWhite ? "#222731" : "#FFFFFF")};
-  margin-right: 526px;
 `;
 
 const LightDark = styled.button`
