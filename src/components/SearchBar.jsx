@@ -1,31 +1,43 @@
 import Loop from "../images/Loop.png";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const SearchBar = ({ isWhite, setUser, user }) => {
   const [userInput, setUserInput] = useState("AniAvazneli");
+  const [displayError, setDisplayError] = useState(false);
   const inputHandler = (e) => {
     setUserInput(e.target.value);
   };
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${userInput}`).then((response) => {
-      response.json().then((user) => {
-        // console.log(user.followers);
-        setUser(user);
-      });
-    });
+    const fetchMe = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.github.com/users/${userInput}`
+        );
+        setUser(response.data);
+      } catch (e) {
+        if(e.response.status === 404) {
+          setDisplayError(true);
+        }
+      }
+    };
+    fetchMe();
   }, []);
 
-
-  const searchHandler = (e) => {
-    console.log(setUser);
-    fetch(`https://api.github.com/users/${userInput}`).then((response) => {
-      response.json().then((user) => {
-        // console.log(user.followers);
-        setUser(user);
-      });
-    });
+  const searchHandler = async (e) => {
+    try {
+      const response = await axios.get(
+        `https://api.github.com/users/${userInput}`
+      );
+      setUser(response.data);
+      setDisplayError(false);
+    } catch (e) {
+      if(e.response.status === 404) {
+        setDisplayError(true);
+      }
+    }
   };
   return (
     <SearchBarDiv isWhite={isWhite}>
@@ -36,7 +48,7 @@ const SearchBar = ({ isWhite, setUser, user }) => {
         isWhite={isWhite}
         placeholder="Search GitHub username…"
       />
-      <NoResult>No results</NoResult>
+      {displayError && <NoResult>No results</NoResult>} 
       <Button onClick={searchHandler}>Search</Button>
     </SearchBarDiv>
   );
@@ -84,7 +96,6 @@ const NoResult = styled.h3`
   font-size: 15px;
   line-height: 22px;
   color: #f74646;
-  display: none;
 `;
 
 const Button = styled.button`
